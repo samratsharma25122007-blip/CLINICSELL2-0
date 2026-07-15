@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { GlassPanel, SectionHeading } from "./glass";
+import { Reveal } from "./reveal";
 
 const testimonials = [
   {
@@ -32,20 +33,26 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="scroll-mt-28 px-4 pb-24 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          eyebrow="Patient stories"
-          title="Don't take our word for it"
-          subtitle="Thousands of patients trust ClinicSell with their family's health. Here's what a few of them say."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Patient stories"
+            title="Don't take our word for it"
+            subtitle="Thousands of patients trust ClinicSell with their family's health. Here's what a few of them say."
+          />
+        </Reveal>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <GlassPanel
+          {testimonials.map((testimonial, index) => (
+            <Reveal
               key={testimonial.name}
-              className="rounded-3xl"
-              contentClassName="flex h-full flex-col p-7"
-              tint="bg-white/10"
+              delay={index * 0.12}
+              className="h-full"
             >
+              <GlassPanel
+                className="h-full rounded-3xl"
+                contentClassName="flex h-full flex-col p-7"
+                tint="bg-white/10"
+              >
               <div
                 className="flex gap-1"
                 role="img"
@@ -76,7 +83,8 @@ export function Testimonials() {
                   <p className="text-xs text-white/60">{testimonial.role}</p>
                 </div>
               </figcaption>
-            </GlassPanel>
+              </GlassPanel>
+            </Reveal>
           ))}
         </div>
       </div>

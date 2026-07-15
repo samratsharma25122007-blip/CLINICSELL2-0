@@ -1,5 +1,6 @@
 import { HeartPulse, Mail, MapPin, Phone } from "lucide-react";
 import { GlassPanel } from "./glass";
+import { Reveal } from "./reveal";
 
 const quickLinks = [
   { label: "Services", href: "#services" },
@@ -44,8 +45,9 @@ const socials = [
 export function Footer() {
   return (
     <footer className="px-4 pb-8 sm:px-6">
+      <Reveal className="mx-auto max-w-6xl">
       <GlassPanel
-        className="mx-auto max-w-6xl rounded-[2rem]"
+        className="rounded-[2rem]"
         contentClassName="px-8 pb-8 pt-12 sm:px-10"
         tint="bg-black/35"
       >
@@ -173,6 +175,7 @@ export function Footer() {
           </div>
         </div>
       </GlassPanel>
+      </Reveal>
     </footer>
   );
 }

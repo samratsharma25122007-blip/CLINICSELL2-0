@@ -8,6 +8,7 @@ import {
   Stethoscope,
 } from "lucide-react";
 import { GlassPanel, SectionHeading } from "./glass";
+import { Reveal } from "./reveal";
 
 const services = [
   {
@@ -52,20 +53,26 @@ export function Services() {
   return (
     <section id="services" className="scroll-mt-28 px-4 pb-24 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          eyebrow="Our services"
-          title="Everything your family needs, under one roof"
-          subtitle="Six departments, one shared record, zero running between buildings. Book any of them in under a minute."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Our services"
+            title="Everything your family needs, under one roof"
+            subtitle="Six departments, one shared record, zero running between buildings. Book any of them in under a minute."
+          />
+        </Reveal>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <GlassPanel
+          {services.map((service, index) => (
+            <Reveal
               key={service.title}
-              className="group rounded-3xl transition-transform duration-300 hover:-translate-y-1.5"
-              contentClassName="flex h-full flex-col p-7"
-              tint="bg-white/10"
+              delay={(index % 3) * 0.12}
+              className="h-full"
             >
+              <GlassPanel
+                className="group h-full rounded-3xl transition-transform duration-300 hover:-translate-y-1.5"
+                contentClassName="flex h-full flex-col p-7"
+                tint="bg-white/10"
+              >
               <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-400/25 ring-1 ring-white/25">
                 <service.icon
                   className="h-6 w-6 text-teal-200"
@@ -88,7 +95,8 @@ export function Services() {
                   aria-hidden="true"
                 />
               </a>
-            </GlassPanel>
+              </GlassPanel>
+            </Reveal>
           ))}
         </div>
       </div>

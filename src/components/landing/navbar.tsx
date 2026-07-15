@@ -17,7 +17,7 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
       <GlassPanel
         distort
-        className="mx-auto max-w-6xl rounded-2xl"
+        className="reveal-down mx-auto max-w-6xl rounded-2xl"
         contentClassName="flex items-center justify-between gap-4 px-4 py-3 sm:px-6"
         tint="bg-white/10"
       >

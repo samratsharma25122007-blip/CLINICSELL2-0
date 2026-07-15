@@ -8,6 +8,7 @@ import {
   Send,
 } from "lucide-react";
 import { GlassPanel, GlassCTA, SectionHeading } from "./glass";
+import { Reveal } from "./reveal";
 
 const contactItems = [
   {
@@ -50,12 +51,15 @@ export function Appointment() {
   return (
     <section id="appointment" className="scroll-mt-28 px-4 pb-24 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          eyebrow="Book a visit"
-          title="See a doctor this week — often today"
-          subtitle="Tell us what you need and we'll confirm your appointment within 15 minutes during opening hours."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Book a visit"
+            title="See a doctor this week — often today"
+            subtitle="Tell us what you need and we'll confirm your appointment within 15 minutes during opening hours."
+          />
+        </Reveal>
 
+        <Reveal delay={0.1}>
         <GlassPanel
           className="rounded-[2rem]"
           contentClassName="grid gap-0 lg:grid-cols-5"
@@ -232,6 +236,7 @@ export function Appointment() {
             )}
           </div>
         </GlassPanel>
+        </Reveal>
       </div>
     </section>
   );

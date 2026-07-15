@@ -20,25 +20,37 @@ export function Hero() {
     <section id="top" className="px-4 pb-20 pt-32 sm:px-6 md:pt-40">
       <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-2">
         <div className="text-center lg:text-left">
-          <div className="mb-6 flex justify-center lg:justify-start">
+          <div
+            className="reveal-left mb-6 flex justify-center lg:justify-start"
+            style={{ animationDelay: "0.15s" }}
+          >
             <GlassChip>
               <Sparkles className="h-4 w-4 text-teal-300" aria-hidden="true" />
               Rated 4.9/5 by 2,000+ patients
             </GlassChip>
           </div>
 
-          <h1 className="text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1
+            className="reveal-left text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+            style={{ animationDelay: "0.28s" }}
+          >
             Care that revolves{" "}
             <span className="text-teal-300">around you.</span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/75 lg:mx-0">
+          <p
+            className="reveal-left mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/75 lg:mx-0"
+            style={{ animationDelay: "0.4s" }}
+          >
             ClinicSell brings board-certified doctors, same-day appointments,
             and modern diagnostics together under one roof — so you can focus
             on living well, not waiting rooms.
           </p>
 
-          <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+          <div
+            className="reveal-left mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
+            style={{ animationDelay: "0.52s" }}
+          >
             <GlassCTA href="#appointment">
               Book an appointment
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
@@ -48,7 +60,10 @@ export function Hero() {
             </GlassCTA>
           </div>
 
-          <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 lg:justify-start">
+          <ul
+            className="reveal-left mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 lg:justify-start"
+            style={{ animationDelay: "0.64s" }}
+          >
             {trustItems.map((item) => (
               <li
                 key={item.label}
@@ -66,9 +81,10 @@ export function Hero() {
 
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <GlassPanel
-            className="rounded-[2rem]"
+            className="reveal-right rounded-[2rem]"
             contentClassName="p-3"
             tint="bg-white/10"
+            style={{ animationDelay: "0.3s" }}
           >
             <img
               src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=987&auto=format&fit=crop"
@@ -78,7 +94,10 @@ export function Hero() {
             />
           </GlassPanel>
 
-          <div className="absolute -left-3 top-8 sm:-left-6">
+          <div
+            className="reveal-left absolute -left-3 top-8 sm:-left-6"
+            style={{ animationDelay: "0.72s" }}
+          >
             <GlassChip>
               <CalendarCheck
                 className="h-4 w-4 text-teal-300"
@@ -88,7 +107,10 @@ export function Hero() {
             </GlassChip>
           </div>
 
-          <div className="absolute -right-3 bottom-8 sm:-right-6">
+          <div
+            className="reveal-right absolute -right-3 bottom-8 sm:-right-6"
+            style={{ animationDelay: "0.84s" }}
+          >
             <GlassChip>
               <Star
                 className="h-4 w-4 fill-amber-300 text-amber-300"

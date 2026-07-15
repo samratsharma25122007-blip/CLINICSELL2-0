@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { GlassPanel, SectionHeading } from "./glass";
+import { Reveal } from "./reveal";
 
 const doctors = [
   {
@@ -40,20 +41,26 @@ export function Doctors() {
   return (
     <section id="doctors" className="scroll-mt-28 px-4 pb-24 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          eyebrow="Meet the team"
-          title="Doctors patients come back to"
-          subtitle="Board-certified specialists who take the time to listen — and explain things in plain language."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Meet the team"
+            title="Doctors patients come back to"
+            subtitle="Board-certified specialists who take the time to listen — and explain things in plain language."
+          />
+        </Reveal>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {doctors.map((doctor) => (
-            <GlassPanel
+          {doctors.map((doctor, index) => (
+            <Reveal
               key={doctor.name}
-              className="group rounded-3xl transition-transform duration-300 hover:-translate-y-1.5"
-              contentClassName="p-3"
-              tint="bg-white/10"
+              delay={(index % 4) * 0.1}
+              className="h-full"
             >
+              <GlassPanel
+                className="group h-full rounded-3xl transition-transform duration-300 hover:-translate-y-1.5"
+                contentClassName="p-3"
+                tint="bg-white/10"
+              >
               <div className="relative overflow-hidden rounded-[1.35rem]">
                 <img
                   src={doctor.image}
@@ -80,7 +87,8 @@ export function Doctors() {
                   {doctor.experience}
                 </p>
               </div>
-            </GlassPanel>
+              </GlassPanel>
+            </Reveal>
           ))}
         </div>
       </div>

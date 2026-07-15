@@ -6,6 +6,7 @@ import {
   Wallet,
 } from "lucide-react";
 import { GlassPanel } from "./glass";
+import { Reveal } from "./reveal";
 
 const features = [
   {
@@ -44,20 +45,22 @@ export function WhyUs() {
   return (
     <section id="why-us" className="scroll-mt-28 px-4 pb-24 sm:px-6">
       <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
-        <GlassPanel
-          className="rounded-[2rem] lg:order-none"
-          contentClassName="p-3"
-          tint="bg-white/10"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1028&auto=format&fit=crop"
-            alt="Bright, modern clinic corridor"
-            className="h-[380px] w-full rounded-[1.6rem] object-cover sm:h-[520px]"
-            loading="lazy"
-          />
-        </GlassPanel>
+        <Reveal direction="left">
+          <GlassPanel
+            className="rounded-[2rem] lg:order-none"
+            contentClassName="p-3"
+            tint="bg-white/10"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1028&auto=format&fit=crop"
+              alt="Bright, modern clinic corridor"
+              className="h-[380px] w-full rounded-[1.6rem] object-cover sm:h-[520px]"
+              loading="lazy"
+            />
+          </GlassPanel>
+        </Reveal>
 
-        <div>
+        <Reveal direction="right" delay={0.15}>
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-teal-300">
             Why ClinicSell
           </p>
@@ -88,7 +91,7 @@ export function WhyUs() {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
