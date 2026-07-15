@@ -1,38 +1,23 @@
+import { WebGLShader } from "@/components/ui/web-gl-shader";
+
 /**
- * Fixed full-page background for the landing page (light theme).
+ * Fixed full-page background for the landing page.
  *
- * A softly drifting silver / white / light-blue gradient replaces the original
- * dark photo. The `moveBackground` keyframe (from index.css) is reused, slowed
- * to 78s (30% slower than the original 60s). A static overlay adds light-blue
- * accents in a couple of areas only, and the #glass-distortion SVG filter is
- * kept verbatim from `@/components/ui/liquid-glass`.
+ * An animated WebGL shader (blue/navy RGB-split sine waves over a warm
+ * off-white field, shaders verbatim from the reference sketch) fills the
+ * viewport behind the content. A solid #FAFAF9 underlay covers loading,
+ * overscroll, and no-WebGL fallback, and the #glass-distortion SVG filter is
+ * kept verbatim from `@/components/ui/liquid-glass` for the glass panels.
  */
 export function LandingBackground() {
   return (
     <>
-      {/* Animated silver/white base with a light-blue band. The gradient is a
-          vertical palindrome so the scrolling tile loops seamlessly. */}
       <div
         aria-hidden="true"
         className="fixed inset-0 -z-10"
-        style={{
-          backgroundColor: "#eef3f8",
-          backgroundImage:
-            "linear-gradient(180deg, #eef3f8 0%, #ffffff 22%, #dbe7f5 50%, #ffffff 78%, #eef3f8 100%)",
-          backgroundSize: "100% 40%",
-          backgroundRepeat: "repeat",
-          animation: "moveBackground 78s linear infinite",
-        }}
+        style={{ backgroundColor: "#FAFAF9" }}
       />
-      {/* Light-blue accents in some areas only + a gentle silver vignette. */}
-      <div
-        aria-hidden="true"
-        className="fixed inset-0 -z-10"
-        style={{
-          backgroundImage:
-            "radial-gradient(60% 55% at 85% 12%, rgba(186, 216, 245, 0.55) 0%, rgba(186, 216, 245, 0) 60%), radial-gradient(55% 50% at 10% 90%, rgba(203, 213, 225, 0.45) 0%, rgba(203, 213, 225, 0) 60%)",
-        }}
-      />
+      <WebGLShader className="fixed inset-0 -z-10 h-full w-full" />
 
       {/* SVG filter copied verbatim from liquid-glass.tsx (GlassFilter). */}
       <svg style={{ display: "none" }}>
