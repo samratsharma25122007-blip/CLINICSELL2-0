@@ -43,7 +43,7 @@ const departments = [
 ];
 
 const inputClasses =
-  "w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/45 backdrop-blur-sm transition-colors focus:border-transparent focus:outline-none focus:ring-2 focus:ring-teal-300/70";
+  "w-full rounded-xl border border-slate-300 bg-white/70 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 backdrop-blur-sm transition-colors focus:border-transparent focus:outline-none focus:ring-2 focus:ring-teal-500/60";
 
 export function Appointment() {
   const [submitted, setSubmitted] = useState(false);
@@ -63,13 +63,13 @@ export function Appointment() {
         <GlassPanel
           className="rounded-[2rem]"
           contentClassName="grid gap-0 lg:grid-cols-5"
-          tint="bg-white/10"
+          tint="bg-white/55"
         >
-          <div className="border-b border-white/15 p-8 sm:p-10 lg:col-span-2 lg:border-b-0 lg:border-r">
-            <h3 className="text-xl font-semibold text-white">
+          <div className="border-b border-slate-900/10 p-8 sm:p-10 lg:col-span-2 lg:border-b-0 lg:border-r">
+            <h3 className="text-xl font-semibold text-slate-900">
               Contact & location
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
               Walk-ins are welcome, but booking ahead means little to no
               waiting.
             </p>
@@ -77,16 +77,16 @@ export function Appointment() {
             <ul className="mt-8 space-y-6">
               {contactItems.map((item) => (
                 <li key={item.title} className="flex gap-4">
-                  <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-400/25 ring-1 ring-white/25">
+                  <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-500/15 ring-1 ring-teal-600/20">
                     <item.icon
-                      className="h-5 w-5 text-teal-200"
+                      className="h-5 w-5 text-teal-600"
                       aria-hidden="true"
                     />
                   </span>
                   <div>
-                    <p className="font-semibold text-white">{item.title}</p>
+                    <p className="font-semibold text-slate-900">{item.title}</p>
                     {item.lines.map((line) => (
-                      <p key={line} className="text-sm text-white/70">
+                      <p key={line} className="text-sm text-slate-600">
                         {line}
                       </p>
                     ))}
@@ -103,13 +103,13 @@ export function Appointment() {
                 role="status"
               >
                 <CheckCircle2
-                  className="h-14 w-14 text-teal-300"
+                  className="h-14 w-14 text-teal-600"
                   aria-hidden="true"
                 />
-                <h3 className="mt-5 text-2xl font-semibold text-white">
+                <h3 className="mt-5 text-2xl font-semibold text-slate-900">
                   Request received!
                 </h3>
-                <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/70">
+                <p className="mt-2 max-w-sm text-sm leading-relaxed text-slate-600">
                   Thank you — our care team will call you within 15 minutes
                   during opening hours to confirm your appointment.
                 </p>
@@ -133,7 +133,7 @@ export function Appointment() {
                 <div>
                   <label
                     htmlFor="name"
-                    className="mb-1.5 block text-sm font-medium text-white/85"
+                    className="mb-1.5 block text-sm font-medium text-slate-700"
                   >
                     Full name
                   </label>
@@ -150,7 +150,7 @@ export function Appointment() {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="mb-1.5 block text-sm font-medium text-white/85"
+                    className="mb-1.5 block text-sm font-medium text-slate-700"
                   >
                     Phone number
                   </label>
@@ -167,7 +167,7 @@ export function Appointment() {
                 <div>
                   <label
                     htmlFor="department"
-                    className="mb-1.5 block text-sm font-medium text-white/85"
+                    className="mb-1.5 block text-sm font-medium text-slate-700"
                   >
                     Department
                   </label>
@@ -191,7 +191,7 @@ export function Appointment() {
                 <div>
                   <label
                     htmlFor="date"
-                    className="mb-1.5 block text-sm font-medium text-white/85"
+                    className="mb-1.5 block text-sm font-medium text-slate-700"
                   >
                     Preferred date
                   </label>
@@ -201,16 +201,16 @@ export function Appointment() {
                     type="date"
                     required
                     className={inputClasses}
-                    style={{ colorScheme: "dark" }}
+                    style={{ colorScheme: "light" }}
                   />
                 </div>
                 <div className="sm:col-span-2">
                   <label
                     htmlFor="message"
-                    className="mb-1.5 block text-sm font-medium text-white/85"
+                    className="mb-1.5 block text-sm font-medium text-slate-700"
                   >
                     Anything we should know?{" "}
-                    <span className="font-normal text-white/50">
+                    <span className="font-normal text-slate-400">
                       (optional)
                     </span>
                   </label>
@@ -227,7 +227,7 @@ export function Appointment() {
                     Request appointment
                     <Send className="h-4 w-4" aria-hidden="true" />
                   </GlassCTA>
-                  <p className="mt-3 text-xs text-white/55">
+                  <p className="mt-3 text-xs text-slate-500">
                     By submitting, you agree to be contacted about your
                     appointment. We never share your details.
                   </p>

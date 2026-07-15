@@ -2,13 +2,20 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * Landing-page glass primitives.
+ * Landing-page glass primitives (light theme).
  *
  * These reproduce the layered "liquid glass" technique from
  * `@/components/ui/liquid-glass` (backdrop blur + distortion filter + tint +
  * inner specular highlight) without modifying that file. They rely on the
  * same `#glass-distortion` SVG filter, rendered once by <LandingBackground />.
+ *
+ * Tuned for a light silver/white background: frosted-white panels with a soft
+ * bluish shadow and dark slate content.
  */
+
+/** Soft, cool drop shadow that reads on a light background. */
+const LIGHT_PANEL_SHADOW =
+  "0 10px 30px rgba(30, 41, 59, 0.10), 0 2px 8px rgba(30, 41, 59, 0.06)";
 
 interface GlassPanelProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Route the backdrop through the #glass-distortion SVG filter (heavier). */
@@ -23,15 +30,15 @@ export function GlassPanel({
   className,
   contentClassName,
   distort = false,
-  tint = "bg-white/10",
+  tint = "bg-white/55",
   style,
   ...rest
 }: GlassPanelProps) {
   return (
     <div
-      className={cn("relative overflow-hidden", className)}
+      className={cn("relative overflow-hidden ring-1 ring-slate-900/5", className)}
       style={{
-        boxShadow: "0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1)",
+        boxShadow: LIGHT_PANEL_SHADOW,
         ...style,
       }}
       {...rest}
@@ -53,7 +60,7 @@ export function GlassPanel({
         className="absolute inset-0 z-20"
         style={{
           boxShadow:
-            "inset 2px 2px 1px 0 rgba(255, 255, 255, 0.4), inset -1px -1px 1px 1px rgba(255, 255, 255, 0.12)",
+            "inset 2px 2px 1px 0 rgba(255, 255, 255, 0.7), inset -1px -1px 1px 1px rgba(148, 163, 184, 0.12)",
         }}
       />
       <div className={cn("relative z-30", contentClassName)}>{children}</div>
@@ -83,8 +90,13 @@ type GlassCTAProps = GlassCTABaseProps &
   );
 
 const ctaTints: Record<GlassCTAVariant, string> = {
-  primary: "bg-teal-400/40",
-  secondary: "bg-white/15",
+  primary: "bg-teal-600/85",
+  secondary: "bg-white/60",
+};
+
+const ctaText: Record<GlassCTAVariant, string> = {
+  primary: "text-white",
+  secondary: "text-slate-800",
 };
 
 export function GlassCTA({
@@ -123,11 +135,12 @@ export function GlassCTA({
   );
 
   const baseClasses = cn(
-    "relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-full px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
+    "relative inline-flex cursor-pointer items-center justify-center overflow-hidden rounded-full px-7 py-3.5 text-base font-semibold transition-all duration-300 hover:scale-[1.04] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
+    ctaText[variant],
     className,
   );
   const baseStyle: React.CSSProperties = {
-    boxShadow: "0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1)",
+    boxShadow: LIGHT_PANEL_SHADOW,
     transitionTimingFunction: "cubic-bezier(0.175, 0.885, 0.32, 1.4)",
   };
 
@@ -162,10 +175,10 @@ export function GlassChip({
     <GlassPanel
       className={cn("rounded-full", className)}
       contentClassName={cn(
-        "flex items-center gap-2 px-4 py-2 text-sm font-medium text-white",
+        "flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700",
         contentClassName,
       )}
-      tint="bg-white/15"
+      tint="bg-white/60"
     >
       {children}
     </GlassPanel>
@@ -184,14 +197,14 @@ export function SectionHeading({
 }) {
   return (
     <div className="mx-auto mb-14 max-w-2xl text-center">
-      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-teal-300">
+      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-teal-600">
         {eyebrow}
       </p>
-      <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+      <h2 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
+        <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
           {subtitle}
         </p>
       )}

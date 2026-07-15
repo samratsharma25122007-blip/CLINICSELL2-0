@@ -51,7 +51,7 @@ export function Testimonials() {
               <GlassPanel
                 className="h-full rounded-3xl"
                 contentClassName="flex h-full flex-col p-7"
-                tint="bg-white/10"
+                tint="bg-white/55"
               >
               <div
                 className="flex gap-1"
@@ -61,26 +61,26 @@ export function Testimonials() {
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
-                    className="h-4 w-4 fill-amber-300 text-amber-300"
+                    className="h-4 w-4 fill-amber-400 text-amber-400"
                     aria-hidden="true"
                   />
                 ))}
               </div>
-              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-white/85">
+              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-slate-700">
                 “{testimonial.quote}”
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3">
                 <img
                   src={testimonial.avatar}
                   alt=""
-                  className="h-11 w-11 rounded-full object-cover ring-2 ring-white/30"
+                  className="h-11 w-11 rounded-full object-cover ring-2 ring-white"
                   loading="lazy"
                 />
                 <div>
-                  <p className="text-sm font-semibold text-white">
+                  <p className="text-sm font-semibold text-slate-900">
                     {testimonial.name}
                   </p>
-                  <p className="text-xs text-white/60">{testimonial.role}</p>
+                  <p className="text-xs text-slate-500">{testimonial.role}</p>
                 </div>
               </figcaption>
               </GlassPanel>

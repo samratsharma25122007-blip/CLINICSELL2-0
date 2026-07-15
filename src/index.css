@@ -17,8 +17,8 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  /* Fallback while the animated background image loads (and for overscroll). */
-  background-color: #0a0f1e;
+  /* Fallback while the animated background loads (and for overscroll). */
+  background-color: #eef3f8;
   font-family:
     ui-sans-serif,
     system-ui,
@@ -33,8 +33,8 @@ body {
 }
 
 ::selection {
-  background: rgba(94, 234, 212, 0.35);
-  color: #fff;
+  background: rgba(125, 211, 252, 0.45);
+  color: #0f172a;
 }
 
 /* Reveal animations — content slides in from its respective side. Hero

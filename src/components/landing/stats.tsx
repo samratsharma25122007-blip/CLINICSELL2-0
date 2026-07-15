@@ -16,15 +16,15 @@ export function Stats() {
         <GlassPanel
           className="rounded-3xl"
           contentClassName="grid grid-cols-2 gap-8 px-6 py-10 sm:px-10 lg:grid-cols-4"
-          tint="bg-white/10"
+          tint="bg-sky-100/50"
         >
           {stats.map((stat) => (
             <div key={stat.label} className="flex flex-col items-center gap-2 text-center">
-              <stat.icon className="h-6 w-6 text-teal-300" aria-hidden="true" />
-              <span className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              <stat.icon className="h-6 w-6 text-teal-600" aria-hidden="true" />
+              <span className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                 {stat.value}
               </span>
-              <span className="text-sm font-medium text-white/70">
+              <span className="text-sm font-medium text-slate-600">
                 {stat.label}
               </span>
             </div>

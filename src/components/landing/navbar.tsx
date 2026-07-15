@@ -19,18 +19,18 @@ export function Navbar() {
         distort
         className="reveal-down mx-auto max-w-6xl rounded-2xl"
         contentClassName="flex items-center justify-between gap-4 px-4 py-3 sm:px-6"
-        tint="bg-white/10"
+        tint="bg-white/55"
       >
         <a
           href="#top"
-          className="flex items-center gap-2.5 text-white"
+          className="flex items-center gap-2.5 text-slate-900"
           aria-label="ClinicSell — back to top"
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-400/30 ring-1 ring-white/30">
-            <HeartPulse className="h-5 w-5 text-teal-200" aria-hidden="true" />
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-500/15 ring-1 ring-teal-600/20">
+            <HeartPulse className="h-5 w-5 text-teal-600" aria-hidden="true" />
           </span>
           <span className="text-lg font-bold tracking-tight">
-            Clinic<span className="text-teal-300">Sell</span>
+            Clinic<span className="text-teal-600">Sell</span>
           </span>
         </a>
 
@@ -39,7 +39,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+              className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-900/5 hover:text-slate-900"
             >
               {link.label}
             </a>
@@ -54,7 +54,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-xl text-white transition-colors hover:bg-white/10 md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-xl text-slate-700 transition-colors hover:bg-slate-900/5 md:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -73,14 +73,14 @@ export function Navbar() {
           id="mobile-menu"
           className="mx-auto mt-2 max-w-6xl rounded-2xl md:hidden"
           contentClassName="flex flex-col gap-1 p-4"
-          tint="bg-black/40"
+          tint="bg-white/70"
         >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="rounded-xl px-4 py-3 text-base font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white"
+              className="rounded-xl px-4 py-3 text-base font-medium text-slate-700 transition-colors hover:bg-slate-900/5 hover:text-slate-900"
             >
               {link.label}
             </a>

@@ -49,26 +49,26 @@ export function Footer() {
       <GlassPanel
         className="rounded-[2rem]"
         contentClassName="px-8 pb-8 pt-12 sm:px-10"
-        tint="bg-black/35"
+        tint="bg-sky-100/55"
       >
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <a
               href="#top"
-              className="flex items-center gap-2.5 text-white"
+              className="flex items-center gap-2.5 text-slate-900"
               aria-label="ClinicSell — back to top"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-400/30 ring-1 ring-white/30">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-500/15 ring-1 ring-teal-600/20">
                 <HeartPulse
-                  className="h-5 w-5 text-teal-200"
+                  className="h-5 w-5 text-teal-600"
                   aria-hidden="true"
                 />
               </span>
               <span className="text-lg font-bold tracking-tight">
-                Clinic<span className="text-teal-300">Sell</span>
+                Clinic<span className="text-teal-600">Sell</span>
               </span>
             </a>
-            <p className="mt-4 text-sm leading-relaxed text-white/65">
+            <p className="mt-4 text-sm leading-relaxed text-slate-600">
               Modern, multi-specialty care with same-day appointments, digital
               records, and doctors who listen.
             </p>
@@ -80,7 +80,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white/75 ring-1 ring-white/20 transition-colors hover:bg-white/20 hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-slate-600 ring-1 ring-slate-900/10 transition-colors hover:bg-white hover:text-slate-900"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -96,7 +96,7 @@ export function Footer() {
           </div>
 
           <nav aria-label="Quick links">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/85">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-800">
               Quick links
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -104,7 +104,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/65 transition-colors hover:text-teal-300"
+                    className="text-sm text-slate-600 transition-colors hover:text-teal-600"
                   >
                     {link.label}
                   </a>
@@ -114,7 +114,7 @@ export function Footer() {
           </nav>
 
           <nav aria-label="Services">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/85">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-800">
               Services
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -122,7 +122,7 @@ export function Footer() {
                 <li key={service}>
                   <a
                     href="#services"
-                    className="text-sm text-white/65 transition-colors hover:text-teal-300"
+                    className="text-sm text-slate-600 transition-colors hover:text-teal-600"
                   >
                     {service}
                   </a>
@@ -132,27 +132,27 @@ export function Footer() {
           </nav>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/85">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-800">
               Contact
             </h3>
-            <ul className="mt-4 space-y-3 text-sm text-white/65">
+            <ul className="mt-4 space-y-3 text-sm text-slate-600">
               <li className="flex items-start gap-2.5">
                 <MapPin
-                  className="mt-0.5 h-4 w-4 shrink-0 text-teal-300"
+                  className="mt-0.5 h-4 w-4 shrink-0 text-teal-600"
                   aria-hidden="true"
                 />
                 221 Wellness Avenue, Suite 4, Midtown
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone
-                  className="h-4 w-4 shrink-0 text-teal-300"
+                  className="h-4 w-4 shrink-0 text-teal-600"
                   aria-hidden="true"
                 />
                 +91 98765 43210
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail
-                  className="h-4 w-4 shrink-0 text-teal-300"
+                  className="h-4 w-4 shrink-0 text-teal-600"
                   aria-hidden="true"
                 />
                 hello@clinicsell.com
@@ -161,15 +161,15 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-6 sm:flex-row">
-          <p className="text-xs text-white/55">
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-slate-900/10 pt-6 sm:flex-row">
+          <p className="text-xs text-slate-500">
             © {new Date().getFullYear()} ClinicSell. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-white/55">
-            <a href="#top" className="transition-colors hover:text-teal-300">
+          <div className="flex gap-6 text-xs text-slate-500">
+            <a href="#top" className="transition-colors hover:text-teal-600">
               Privacy Policy
             </a>
-            <a href="#top" className="transition-colors hover:text-teal-300">
+            <a href="#top" className="transition-colors hover:text-teal-600">
               Terms of Service
             </a>
           </div>

@@ -25,21 +25,21 @@ export function Hero() {
             style={{ animationDelay: "0.15s" }}
           >
             <GlassChip>
-              <Sparkles className="h-4 w-4 text-teal-300" aria-hidden="true" />
+              <Sparkles className="h-4 w-4 text-teal-600" aria-hidden="true" />
               Rated 4.9/5 by 2,000+ patients
             </GlassChip>
           </div>
 
           <h1
-            className="reveal-left text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+            className="reveal-left text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl"
             style={{ animationDelay: "0.28s" }}
           >
             Care that revolves{" "}
-            <span className="text-teal-300">around you.</span>
+            <span className="text-teal-600">around you.</span>
           </h1>
 
           <p
-            className="reveal-left mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/75 lg:mx-0"
+            className="reveal-left mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-600 lg:mx-0"
             style={{ animationDelay: "0.4s" }}
           >
             ClinicSell brings board-certified doctors, same-day appointments,
@@ -67,10 +67,10 @@ export function Hero() {
             {trustItems.map((item) => (
               <li
                 key={item.label}
-                className="flex items-center gap-2 text-sm font-medium text-white/70"
+                className="flex items-center gap-2 text-sm font-medium text-slate-600"
               >
                 <item.icon
-                  className="h-4 w-4 text-teal-300"
+                  className="h-4 w-4 text-teal-600"
                   aria-hidden="true"
                 />
                 {item.label}
@@ -83,7 +83,7 @@ export function Hero() {
           <GlassPanel
             className="reveal-right rounded-[2rem]"
             contentClassName="p-3"
-            tint="bg-white/10"
+            tint="bg-white/55"
             style={{ animationDelay: "0.3s" }}
           >
             <img
@@ -100,7 +100,7 @@ export function Hero() {
           >
             <GlassChip>
               <CalendarCheck
-                className="h-4 w-4 text-teal-300"
+                className="h-4 w-4 text-teal-600"
                 aria-hidden="true"
               />
               Next slot: today, 4:30 PM
@@ -113,7 +113,7 @@ export function Hero() {
           >
             <GlassChip>
               <Star
-                className="h-4 w-4 fill-amber-300 text-amber-300"
+                className="h-4 w-4 fill-amber-400 text-amber-400"
                 aria-hidden="true"
               />
               4.9 average rating

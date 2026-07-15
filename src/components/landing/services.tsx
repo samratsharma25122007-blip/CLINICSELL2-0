@@ -71,23 +71,23 @@ export function Services() {
               <GlassPanel
                 className="group h-full rounded-3xl transition-transform duration-300 hover:-translate-y-1.5"
                 contentClassName="flex h-full flex-col p-7"
-                tint="bg-white/10"
+                tint="bg-white/55"
               >
-              <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-400/25 ring-1 ring-white/25">
+              <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-500/15 ring-1 ring-teal-600/20">
                 <service.icon
-                  className="h-6 w-6 text-teal-200"
+                  className="h-6 w-6 text-teal-600"
                   aria-hidden="true"
                 />
               </span>
-              <h3 className="text-xl font-semibold text-white">
+              <h3 className="text-xl font-semibold text-slate-900">
                 {service.title}
               </h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-white/70">
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
                 {service.description}
               </p>
               <a
                 href="#appointment"
-                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-300 transition-colors hover:text-teal-200"
+                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-600 transition-colors hover:text-teal-700"
               >
                 Book a visit
                 <ArrowRight

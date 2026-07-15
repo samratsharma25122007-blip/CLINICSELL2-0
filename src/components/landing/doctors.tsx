@@ -59,7 +59,7 @@ export function Doctors() {
               <GlassPanel
                 className="group h-full rounded-3xl transition-transform duration-300 hover:-translate-y-1.5"
                 contentClassName="p-3"
-                tint="bg-white/10"
+                tint="bg-white/55"
               >
               <div className="relative overflow-hidden rounded-[1.35rem]">
                 <img
@@ -68,22 +68,22 @@ export function Doctors() {
                   className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
-                <span className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-black/50 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                <span className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-slate-900/55 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
                   <Star
-                    className="h-3.5 w-3.5 fill-amber-300 text-amber-300"
+                    className="h-3.5 w-3.5 fill-amber-400 text-amber-400"
                     aria-hidden="true"
                   />
                   {doctor.rating}
                 </span>
               </div>
               <div className="px-3 pb-4 pt-4">
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-slate-900">
                   {doctor.name}
                 </h3>
-                <p className="text-sm font-medium text-teal-300">
+                <p className="text-sm font-medium text-teal-600">
                   {doctor.specialty}
                 </p>
-                <p className="mt-1 text-xs text-white/60">
+                <p className="mt-1 text-xs text-slate-500">
                   {doctor.experience}
                 </p>
               </div>

@@ -1,26 +1,37 @@
 /**
- * Fixed full-page background for the landing page.
+ * Fixed full-page background for the landing page (light theme).
  *
- * The background styling (image, `moveBackground` animation) and the
- * #glass-distortion SVG filter are reproduced exactly from
- * `@/components/ui/liquid-glass` — which stays untouched — so the whole
- * landing page sits on top of that same animated liquid-glass backdrop.
+ * A softly drifting silver / white / light-blue gradient replaces the original
+ * dark photo. The `moveBackground` keyframe (from index.css) is reused, slowed
+ * to 78s (30% slower than the original 60s). A static overlay adds light-blue
+ * accents in a couple of areas only, and the #glass-distortion SVG filter is
+ * kept verbatim from `@/components/ui/liquid-glass`.
  */
 export function LandingBackground() {
   return (
     <>
+      {/* Animated silver/white base with a light-blue band. The gradient is a
+          vertical palindrome so the scrolling tile loops seamlessly. */}
       <div
         aria-hidden="true"
-        className="fixed inset-0 -z-10 overflow-hidden"
+        className="fixed inset-0 -z-10"
         style={{
-          background: `url("https://images.unsplash.com/photo-1432251407527-504a6b4174a2?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center center`,
-          animation: "moveBackground 60s linear infinite",
+          backgroundColor: "#eef3f8",
+          backgroundImage:
+            "linear-gradient(180deg, #eef3f8 0%, #ffffff 22%, #dbe7f5 50%, #ffffff 78%, #eef3f8 100%)",
+          backgroundSize: "100% 40%",
+          backgroundRepeat: "repeat",
+          animation: "moveBackground 78s linear infinite",
         }}
       />
-      {/* Subtle vignette so long-form text stays readable over the photo. */}
+      {/* Light-blue accents in some areas only + a gentle silver vignette. */}
       <div
         aria-hidden="true"
-        className="fixed inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/20 to-black/50"
+        className="fixed inset-0 -z-10"
+        style={{
+          backgroundImage:
+            "radial-gradient(60% 55% at 85% 12%, rgba(186, 216, 245, 0.55) 0%, rgba(186, 216, 245, 0) 60%), radial-gradient(55% 50% at 10% 90%, rgba(203, 213, 225, 0.45) 0%, rgba(203, 213, 225, 0) 60%)",
+        }}
       />
 
       {/* SVG filter copied verbatim from liquid-glass.tsx (GlassFilter). */}

@@ -12,7 +12,7 @@ import { BackToTop } from "./back-to-top";
 
 export function LandingPage() {
   return (
-    <div className="relative min-h-screen w-full overflow-x-clip font-light text-white">
+    <div className="relative min-h-screen w-full overflow-x-clip font-light text-slate-700">
       <LandingBackground />
       <Navbar />
       <main>

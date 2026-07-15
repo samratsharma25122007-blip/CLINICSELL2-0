@@ -49,7 +49,7 @@ export function WhyUs() {
           <GlassPanel
             className="rounded-[2rem] lg:order-none"
             contentClassName="p-3"
-            tint="bg-white/10"
+            tint="bg-white/55"
           >
             <img
               src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1028&auto=format&fit=crop"
@@ -61,13 +61,13 @@ export function WhyUs() {
         </Reveal>
 
         <Reveal direction="right" delay={0.15}>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-teal-300">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-teal-600">
             Why ClinicSell
           </p>
-          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
             A clinic built around your time, not ours
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
             We redesigned the clinic visit from the ground up — less paperwork,
             less waiting, and a care team that already knows your story when
             you walk in.
@@ -76,15 +76,15 @@ export function WhyUs() {
           <ul className="mt-8 space-y-5">
             {features.map((feature) => (
               <li key={feature.title} className="flex gap-4">
-                <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-400/25 ring-1 ring-white/25">
+                <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-500/15 ring-1 ring-teal-600/20">
                   <feature.icon
-                    className="h-5 w-5 text-teal-200"
+                    className="h-5 w-5 text-teal-600"
                     aria-hidden="true"
                   />
                 </span>
                 <div>
-                  <h3 className="font-semibold text-white">{feature.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-white/70">
+                  <h3 className="font-semibold text-slate-900">{feature.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">
                     {feature.description}
                   </p>
                 </div>
