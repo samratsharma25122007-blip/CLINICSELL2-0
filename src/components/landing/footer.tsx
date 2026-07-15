@@ -1,4 +1,4 @@
-import { HeartPulse, Mail, MapPin, Phone } from "lucide-react";
+import { HeartPulse } from "lucide-react";
 import { GlassPanel } from "./glass";
 import { Reveal } from "./reveal";
 
@@ -51,7 +51,7 @@ export function Footer() {
         contentClassName="px-8 pb-8 pt-12 sm:px-10"
         tint="bg-sky-100/55"
       >
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <div>
             <a
               href="#top"
@@ -130,35 +130,6 @@ export function Footer() {
               ))}
             </ul>
           </nav>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-800">
-              Contact
-            </h3>
-            <ul className="mt-4 space-y-3 text-sm text-slate-600">
-              <li className="flex items-start gap-2.5">
-                <MapPin
-                  className="mt-0.5 h-4 w-4 shrink-0 text-teal-600"
-                  aria-hidden="true"
-                />
-                221 Wellness Avenue, Suite 4, Midtown
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone
-                  className="h-4 w-4 shrink-0 text-teal-600"
-                  aria-hidden="true"
-                />
-                +91 98765 43210
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Mail
-                  className="h-4 w-4 shrink-0 text-teal-600"
-                  aria-hidden="true"
-                />
-                hello@clinicsell.com
-              </li>
-            </ul>
-          </div>
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-slate-900/10 pt-6 sm:flex-row">

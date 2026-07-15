@@ -1,31 +1,9 @@
 import { useState } from "react";
-import {
-  CheckCircle2,
-  Clock,
-  Mail,
-  MapPin,
-  Phone,
-  Send,
-} from "lucide-react";
+import { CheckCircle2, Clock, Send } from "lucide-react";
 import { GlassPanel, GlassCTA, SectionHeading } from "./glass";
 import { Reveal } from "./reveal";
 
 const contactItems = [
-  {
-    icon: MapPin,
-    title: "Visit us",
-    lines: ["221 Wellness Avenue, Suite 4", "Midtown, Your City 400001"],
-  },
-  {
-    icon: Phone,
-    title: "Call us",
-    lines: ["+91 98765 43210", "24/7 emergency helpline"],
-  },
-  {
-    icon: Mail,
-    title: "Write to us",
-    lines: ["hello@clinicsell.com", "We reply within a few hours"],
-  },
   {
     icon: Clock,
     title: "Opening hours",
@@ -67,7 +45,7 @@ export function Appointment() {
         >
           <div className="border-b border-slate-900/10 p-8 sm:p-10 lg:col-span-2 lg:border-b-0 lg:border-r">
             <h3 className="text-xl font-semibold text-slate-900">
-              Contact & location
+              Plan your visit
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-600">
               Walk-ins are welcome, but booking ahead means little to no
@@ -160,7 +138,7 @@ export function Appointment() {
                     type="tel"
                     required
                     autoComplete="tel"
-                    placeholder="+91 98765 43210"
+                    placeholder="Your phone number"
                     className={inputClasses}
                   />
                 </div>
